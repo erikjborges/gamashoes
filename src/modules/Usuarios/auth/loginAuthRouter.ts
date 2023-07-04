@@ -32,7 +32,12 @@ loginAuthRouter.post(
             expiresIn: '2 days',
         });
         return res.status(200).json({
-            user: user,
+            user: {
+              id:usuarioBanco.id,
+              nome:usuarioBanco.nome,
+              email:usuarioBanco.email,
+              isAdmin:usuarioBanco.isAdmin
+            },
             token:token
         });
     }
