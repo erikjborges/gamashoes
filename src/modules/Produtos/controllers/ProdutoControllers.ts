@@ -8,7 +8,7 @@ const produtoRouter = Router();
 
 produtoRouter.get('/', async (req: Request, res: Response): Promise<Response> => {
   try {
-    const { pagina = 1, limite = 10 } = req.query;
+    const { pagina = 1, limite = 5 } = req.query;
 
     const produtos = await ProdutoRepository.getProduto(Number(pagina), Number(limite));
 
